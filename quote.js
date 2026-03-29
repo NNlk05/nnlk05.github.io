@@ -43,9 +43,7 @@ class QuoteTable {
 
 const quotes = new QuoteTable();
 
-quotes.add(
-  new Quote("Given enough CPU cycles, all problems can be shallow.", 10),
-);
+quotes.add(new Quote("Given enough CPU cycles, all problems are shallow.", 10));
 quotes.add(
   new Quote(
     "I write code for computers. Wherever if it is suitable for human consumption is up for debate.",
@@ -96,7 +94,7 @@ quotes.add(
 );
 
 quotes.add(new Quote("AAAA\nBBBB", 5));
-quotes.add(new Quote("One line of my code is 100% of the budgs.", 5));
+quotes.add(new Quote("One line of my code is 100% of the bugs.", 5));
 quotes.add(new Quote("4pCA, 166, -31!", 5));
 quotes.add(new Quote("m3 h4xx32!", 5));
 quotes.add(
