@@ -14,7 +14,7 @@ body {
   font-size: 1rem;
   margin: 0;
   color: white;
-  back
+  text-align: center;
 }
 
 h1,
@@ -25,11 +25,11 @@ p {
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 a:link {
@@ -84,9 +84,9 @@ header img {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  animation: fade-out linear both;
+  animation: fade-out cubic-bezier(0.4, 0, 1, 1) both;
   animation-timeline: --header-scroll;
-  animation-range: exit 0% exit 100%;
+  animation-range: exit 0% exit 75%;
 }
 
 @keyframes fade-out {
@@ -103,7 +103,7 @@ header button {
   color: white;
   text-align: center;
   margin: 0;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 header h1 {
@@ -127,7 +127,7 @@ header button {
   min-height: 44px;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,7 +136,7 @@ header button {
 }
 
 header button:hover {
-  transform: scale(1.1);
+  transform: scale(1.25);
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -198,7 +198,7 @@ nav > ul {
 }
 
 .container {
-  max-width: 75%; 
+  max-width: 75%;
   margin: 0 auto;
 }
 
@@ -208,7 +208,7 @@ nav > ul {
   border-radius: 50%;
   border: #152197 4px solid;
   position: relative;
-  background-image: url("./pfp.png");
+  background-image: url("/pfp.png");
   background-size: cover;
   background-position: center;
 }
@@ -227,4 +227,22 @@ nav > ul {
 
 .margin-fix {
   background-color: #152197 !important;
+}
+
+.fake-hr {
+  height: 0px;
+  width: 100%;
+  background-color: #152197;
+  border: 1px solid #227e00;
+}
+
+ul {
+  list-style-position: inside;
+  padding: 0;
+  list-style-type: circle;
+}
+
+li::marker {
+  color: #227e00;
+  font-size: 1.2rem;
 }
