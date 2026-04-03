@@ -247,6 +247,6 @@ li::marker {
   font-size: 1.2rem;
 }
 
-header a {
-  color: white !important;
+nav a {
+  color: #192d05 !important;
 }
