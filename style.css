@@ -250,3 +250,14 @@ li::marker {
 nav a {
   color: #192d05 !important;
 }
+
+pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+#pubkey-hide-show-btn + pre {
+  display: none;
+}
