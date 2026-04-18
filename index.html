@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NNlk05.github.io</title>
     <link rel="stylesheet" href="normalize.css" />
-    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
+      defer
+    ></script>
+    <link
+      rel="preload"
+      href="/style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
     <meta
       name="google-site-verification"
       content="--dhKNDxlhaOMOR1buWLQnWNTOosb9BAUEZi_HXgSt4"
