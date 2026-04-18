@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NNlk05's Projects</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <script
+      src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
+      defer
+    ></script>
+    <link
+      rel="preload"
+      href="/style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="projects.html">Projects</a></li>
+        </ul>
+      </nav>
+      <img
+        src="pack.png"
+        alt="NNlk05's pfp, [pack.png](packpng.com)"
+        draggable="false"
+        width="1920"
+        height="1080"
+      />
+      <h1>NNlk05's Projects</h1>
+      <h2>NNlk05's site</h2>
+      <button
+        onclick="
+          document
+            .querySelector('.scroll-to-here')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        V
+      </button>
+    </header>
+    <main>
+      <section class="intro">
+        <p>Out of all of my projects, here's my favorites:</p>
+        <a
+          href="https://github.com/NNlk05"
+          target="_blank"
+          rel="noopener noreferrer"
+          >See all of my projects on Github.</a
+        >
+      </section>
+      <span
+        class="scroll-to-here"
+        style="
+          display: block;
+          position: relative;
+          top: -100px;
+          visibility: hidden;
+        "
+      ></span>
+      <section class="project1">
+        <h2>
+          <a
+            href="https://github.com/NNlk05/AsciiLIB"
+            target="_blank"
+            rel="noopener noreferrer"
+            >AsciiLIB</a
+          >
+        </h2>
+        <p>
+          A library for creating ASCII games. Currently privated because of
+          messiness.
+        </p>
+      </section>
+      <div class="fake-hr"></div>
+      <section class="project2">
+        <h2>
+          <a
+            href="https://github.com/NNlk05/caterer-ii"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Caterer 2</a
+          >
+        </h2>
+        <p>
+          ConwayLife Lounge Server Bot. I am porting it to the Bun runtime for
+          speed.
+        </p>
+      </section>
+      <div class="fake-hr"></div>
+      <section class="project3">
+        <h2>
+          <a
+            href="https://github.com/NNlk05/slimechunks"
+            target="_blank"
+            rel="noopener noreferrer"
+            >slimechunks</a
+          >
+        </h2>
+        <p>A set of utilities for generating Minecraft Slimechunks.</p>
+      </section>
+      <div class="fake-hr"></div>
+      <section class="project4">
+        <h2>
+          <a
+            href="https://github.com/NNlk05/apgman"
+            target="_blank"
+            rel="noopener noreferrer"
+            >APGMan</a
+          >
+        </h2>
+        <p>
+          I got tired of compiling and recompiling apgsearch, and managing all
+          of the builds, so I wrote this
+        </p>
+      </section>
+      <div class="fake-hr"></div>
+      <section class="project5">
+        <h2>
+          <a
+            href="https://youtu.be/dQw4w9WgXcQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Not coming soon</a
+          >
+        </h2>
+        <p>Not coming soon</p>
+      </section>
+      <div class="fake-hr"></div>
+    </main>
+  </body>
+</html>
