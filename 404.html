@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Not found</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <script
+      src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
+      defer
+    ></script>
+    <link
+      rel="preload"
+      href="/style.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <span class="question">?</span>
+      <img
+        src="pack.png"
+        alt="NNlk05's pfp, [pack.png](packpng.com)"
+        draggable="false"
+      />
+      <h1>Where's That Hill?</h1>
+      <h2>404 Not Found</h2>
+      <button
+        onclick="
+          document
+            .querySelector('.scroll-to-here')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        V
+      </button>
+    </header>
+    <main>
+      <span
+        class="scroll-to-here"
+        style="
+          display: block;
+          position: relative;
+          top: -100px;
+          visibility: hidden;
+        "
+      ></span>
+      <section class="not-found">
+        <h2>Where's That Hill?</h2>
+        <p>Strange, I can't find this hill</p>
+        <button class="back-to-home-btn">
+          <a href="/">🏠</a>
+        </button>
+        <span style="margin-top: 10px">Back to home</span>
+      </section>
+    </main>
+  </body>
+</html>

@@ -86,10 +86,27 @@ header img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  z-index: 0;
   animation: fade-out cubic-bezier(0.4, 0, 1, 1) both;
   animation-timeline: --header-scroll;
   animation-range: exit 0% exit 75%;
+}
+
+header .question {
+  position: absolute;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50vh;
+  color: #192d05;
+  opacity: 0.5;
+  z-index: 1;
+  animation: fade-out cubic-bezier(0.4, 0, 1, 1) both;
+  animation-timeline: --header-scroll;
+  animation-range: exit 25% exit 100%;
 }
 
 @keyframes fade-out {
@@ -285,4 +302,44 @@ blockquote {
 .quote::after {
   content: "\A--NNlk05";
   white-space: pre;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25vh;
+}
+
+.back-to-home-btn {
+  color: white;
+  text-align: center;
+  margin: 0;
+  text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.8);
+  background: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 3vw;
+  height: 3vw;
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 30px;
+  margin-top: 1wh;
+}
+
+.back-to-home-btn:hover {
+  transform: scale(1.25);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.back-to-home-btn a {
+  color: white;
+  border: none;
 }
