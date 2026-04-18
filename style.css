@@ -15,6 +15,7 @@ body {
   margin: 0;
   color: white;
   text-align: center;
+  background-color: #212ea0;
 }
 
 h1,
@@ -32,6 +33,10 @@ h3 {
   font-size: 1.5rem;
 }
 
+a {
+  margin-bottom: 0.1rem;
+}
+
 a:link {
   color: #227e00;
   text-decoration: none;
@@ -44,9 +49,7 @@ a:visited {
 }
 
 a:hover {
-  text-decoration: wavy underline;
-  text-decoration-color: #192d05;
-  text-decoration-thickness: 2px;
+  border-bottom-color: #192d05;
 }
 
 a:active {
@@ -92,6 +95,12 @@ header img {
 @keyframes fade-out {
   to {
     opacity: 0;
+  }
+}
+
+@keyframes section-hover {
+  to {
+    background-color: #172499;
   }
 }
 
@@ -145,12 +154,8 @@ main > section {
   min-height: 10vh;
 }
 
-main > section:nth-of-type(odd) {
-  background-color: #182498;
-}
-
-main > section:nth-of-type(even) {
-  background-color: #152197;
+main > section:hover {
+  animation: section-hover 0.33s ease-in-out both;
 }
 
 .quote-section {
@@ -260,4 +265,8 @@ pre {
 
 #pubkey-hide-show-btn + pre {
   display: none;
+}
+
+li {
+  margin-bottom: 0.3rem;
 }
