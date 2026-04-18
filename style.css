@@ -183,8 +183,7 @@ nav {
   z-index: 1000;
 }
 
-nav > ul > li > a,
-nav > ul > li > a:visited {
+nav > ul > li > a {
   color: black;
   text-decoration: none;
   padding: 0.5rem;
@@ -195,6 +194,10 @@ nav > ul {
   display: flex;
   margin: 0;
   padding: 0;
+}
+
+nav > ul > li > a:visited {
+  color: #227e00;
 }
 
 .intro {
@@ -269,4 +272,17 @@ pre {
 
 li {
   margin-bottom: 0.3rem;
+}
+
+blockquote {
+  border-left: 4px solid #227e00;
+  padding-left: 1rem;
+  margin: 1rem auto;
+  max-width: clamp(25%, 600px, 100%);
+  font-style: italic;
+}
+
+.quote::after {
+  content: "\A--NNlk05";
+  white-space: pre;
 }

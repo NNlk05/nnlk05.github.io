@@ -92,6 +92,14 @@ quotes.add(
     10,
   ),
 );
+quotes.add(
+  new Quote(
+    "I don't always test my code, but when I do, I do it in production.",
+    10,
+  ),
+);
+
+quotes.add(new Quote("I found a c/137 forwards growth mechanism!", 10));
 
 quotes.add(new Quote("AAAA\nBBBB", 5));
 quotes.add(new Quote("One line of my code is 100% of the bugs.", 5));
@@ -113,6 +121,9 @@ quotes.add(
 quotes.add(new Quote("beefboard is peak!", 5));
 quotes.add(new Quote("grind #ask-for-help", 5));
 quotes.add(new Quote("this is blank!", 5));
+quotes.add(new Quote(`x = 7, y = 3, rule = B3/S23<br/>o3b3o$3o2bo$bo!`, 5));
+quotes.add(new Quote("sweet-revenge.rle", 5));
+quotes.add(new Quote("Ceci n'est pas une citation!", 5));
 
 function newQuote() {
   const target = document.querySelector("blockquote");
