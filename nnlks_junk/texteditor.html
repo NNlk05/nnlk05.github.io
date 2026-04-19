@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 Not found</title>
-    <link rel="stylesheet" href="/normalize.css" />
+    <title>Text editor</title>
+
     <script
       src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
       defer
@@ -34,7 +34,6 @@
           <li><a href="/nnlks_junk/index.html">My Junk</a></li>
         </ul>
       </nav>
-      <span class="question">?</span>
       <img
         src="/pack.png"
         alt="NNlk05's pfp, [pack.png](packpng.com)"
@@ -42,8 +41,8 @@
         width="1920"
         height="1080"
       />
-      <h1>Where's That Hill?</h1>
-      <h2>404 Not Found</h2>
+      <h1>Text editor</h1>
+      <h2>NNlk05's site</h2>
       <button
         onclick="
           document
@@ -64,14 +63,22 @@
           visibility: hidden;
         "
       ></span>
-      <section class="not-found">
-        <h2>Where's That Hill?</h2>
-        <p>Strange, I can't find this hill</p>
-        <button class="back-to-home-btn">
-          <a href="/">🏠</a>
-        </button>
-        <span style="margin-top: 10px">Back to home</span>
-      </section>
+      <input type="file" id="file" style="display: none" />
+      <h2>Text editor</h2>
+      <div class="toolbar" style="margin-bottom: 0.5rem">
+        <button id="upload" title="Upload file">📤</button
+        ><button id="save" title="Save to Browser storage">🗁</button
+        ><button id="load" title="Load from Browser storage">⟳</button
+        ><button id="download" title="Download file">📥</button
+        ><input
+          type="text"
+          name="file-name"
+          id="file-name"
+          placeholder="File name"
+        />
+      </div>
+      <textarea rows="80" cols="106" id="text-input"></textarea>
+      <script src="texteditor.js"></script>
     </main>
   </body>
 </html>

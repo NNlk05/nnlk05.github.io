@@ -60,10 +60,21 @@ a:active {
   background: #aaa37c;
 }
 
-button {
+button,
+input,
+optgroup {
   border: 2px solid #192d05;
   background-color: #4a3b30;
   color: white;
+  font-family: "Courier New", Courier, monospace;
+  margin: 2.5px;
+}
+
+textarea {
+  border: 2px solid #192d05;
+  background-color: #000;
+  color: limegreen;
+  font-family: "Courier New", Courier, monospace;
 }
 
 header {
