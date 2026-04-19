@@ -5,9 +5,6 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
@@ -16,6 +13,12 @@ body {
   color: white;
   text-align: center;
   background-color: #152197;
+}
+
+.icons * {
+  font-family: "Noto Emoji" !important;
+  font-variant-emoji: emoji;
+  font-weight: 400;
 }
 
 h1,
