@@ -363,3 +363,15 @@ blockquote {
   background-color: #182498;
   font-style: italic;
 }
+
+#test-area {
+  display: block !important;
+  width: 25vw;
+  height: 25vh;
+  background-color: red;
+  margin: 20px auto;
+}
+
+div:empty::before {
+  content: "\00a0";
+}
