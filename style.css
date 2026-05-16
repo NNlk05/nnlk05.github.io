@@ -26,6 +26,7 @@ h2,
 h3,
 p {
   text-align: center;
+  margin-top: 0; /* Reset top margin to stop structural shifting */
 }
 
 h2 {
@@ -91,20 +92,48 @@ header {
   overflow: hidden;
   background-color: #182498;
   view-timeline-name: --header-scroll;
-  aspect-ratio: 16 / 9;
 }
 
 header img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   object-fit: cover;
   z-index: 0;
   animation: fade-out cubic-bezier(0.4, 0, 1, 1) both;
   animation-timeline: --header-scroll;
   animation-range: exit 0% exit 75%;
+}
+
+header .header-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  pointer-events: none;
+}
+
+header .header-content h1,
+header .header-content h2 {
+  color: white;
+  text-align: center;
+  margin: 0;
+  text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+header .header-content h1 {
+  font-size: 3rem;
+}
+
+header .header-content h2 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: normal;
+  opacity: 0.9;
 }
 
 header .question {
@@ -136,29 +165,11 @@ header .question {
   }
 }
 
-header h1,
-header h2,
 header button {
-  position: relative;
+  position: absolute;
+  bottom: 30px;
   z-index: 2;
   color: white;
-  text-align: center;
-  margin: 0;
-  text-shadow: 8px 8px 16px rgba(0, 0, 0, 0.8);
-}
-
-header h1 {
-  font-size: 3rem;
-}
-
-header h2 {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  font-weight: normal;
-  opacity: 0.9;
-  margin-bottom: 2rem;
-}
-
-header button {
   background: none;
   border: 2px solid white;
   border-radius: 50%;
@@ -172,8 +183,6 @@ header button {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 30px;
 }
 
 header button:hover {
@@ -372,6 +381,6 @@ blockquote {
   margin: 20px auto;
 }
 
-div:empty::before {
+div:empty:not(#test-area)::before {
   content: "\00a0";
 }
