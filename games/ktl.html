@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kill the Life</title>
+    <link rel="stylesheet" href="/normalize.css" />
+    <script
+      src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
+      defer
+    ></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script defer src="ktl.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/nnlks_junk/index.html">My Junk</a></li>
+          <li><a href="/games/index.html">My Games</a></li>
+        </ul>
+      </nav>
+      <img
+        src="/pack.png"
+        alt="NNlk05's pfp, [pack.png](packpng.com)"
+        draggable="false"
+        width="1920"
+        height="1080"
+      />
+      <div class="header-content">
+        <h1>Kill the Life</h1>
+        <h2>NNlk05's site</h2>
+      </div>
+      <button
+        onclick="
+          document
+            .querySelector('.scroll-to-here')
+            .scrollIntoView({ behavior: 'smooth' })
+        "
+      >
+        V
+      </button>
+    </header>
+    <main>
+      <span
+        class="scroll-to-here"
+        style="
+          display: block;
+          position: relative;
+          top: -100px;
+          visibility: hidden;
+        "
+      ></span>
+      <h2>Kill the Life at NNlk05's website.</h2>
+      <section class="ktl-intro">
+        <p>
+          Welcome to Kill the Life! Click the button below to start the game.
+        </p>
+        <p>
+          In this game, you will be presented with a grid of cells.
+          <br />
+          Some cells will be alive, and some will be dead.
+          <br />
+          The cells follow these rules:
+          <br />
+          A dead cell becomes live if it is surrounded by exactly three live
+          neighbours, and otherwise remains dead;
+          <br />
+          A live cell survives if it is surrounded by two or three live
+          neighbours, and otherwise dies.
+          <br />Your goal is to eliminate all the live cells by clicking on
+          them. <br />Try to kill the life in as few clicks as possible!
+        </p>
+      </section>
+      <section class="ktl-game">
+        <button id="step-button" title="Step board">▶️</button>
+        <div id="output-container"></div>
+        <div id="game-container">
+          <div class="grid">
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+            <div>
+              <input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" /><input type="checkbox" /><input
+                type="checkbox"
+              /><input type="checkbox" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
