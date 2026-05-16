@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NNlk05's Junk/Random Stuff</title>
+    <title>Clicks Per Second Test</title>
     <link rel="stylesheet" href="/normalize.css" />
     <script
       src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
@@ -20,6 +20,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <script defer src="cps.js"></script>
   </head>
   <body>
     <header>
@@ -40,7 +41,7 @@
         height="1080"
       />
       <div class="header-content">
-        <h1>NNlk05's Junk/Random Stuff</h1>
+        <h1>Clicks Per Second Test</h1>
         <h2>NNlk05's site</h2>
       </div>
       <button
@@ -63,12 +64,13 @@
           visibility: hidden;
         "
       ></span>
-      <h2>Some of my random stuff</h2>
-      <ul>
-        <li><a href="texteditor.html">Text editor</a></li>
-        <li><a href="reaction-time-test.html">Reaction time test</a></li>
-        <li><a href="cps.html">Click per second test</a></li>
-      </ul>
+      <h2>Clicks Per Second Test</h2>
+      <p>
+        Welcome to the Clicks Per Second Test! Click the button below as many
+        times as you can in 10 seconds.
+      </p>
+      <button id="click-button">Click me!</button>
+      <p id="result">Result will appear here.</p>
     </main>
   </body>
 </html>

@@ -395,3 +395,10 @@ blockquote {
 div:empty:not(#test-area)::before {
   content: "\00a0";
 }
+
+#click-button {
+  width: 25vw;
+  height: 25vh;
+  border-width: 0.25vw;
+  margin-bottom: 1rem;
+}
