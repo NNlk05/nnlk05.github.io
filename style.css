@@ -82,6 +82,12 @@ textarea {
   font-family: "Courier New", Courier, monospace;
 }
 
+button:disabled,
+input:disabled,
+optgroup:disabled {
+  cursor: not-allowed;
+}
+
 header {
   display: flex;
   flex-direction: column;
