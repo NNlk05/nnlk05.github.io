@@ -358,3 +358,8 @@ blockquote {
   color: white;
   border: none;
 }
+
+#current-time {
+  background-color: #182498;
+  font-style: italic;
+}
