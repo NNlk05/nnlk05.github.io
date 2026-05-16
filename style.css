@@ -206,6 +206,10 @@ main > section:hover {
   animation: section-hover 0.33s ease-in-out both;
 }
 
+main > h2 {
+  margin-top: 1rem;
+}
+
 .quote-section {
   display: flex;
   justify-content: center;
