@@ -18,7 +18,7 @@ h2,
 h3,
 p {
   text-align: center;
-  margin-top: 0; /* Reset top margin to stop structural shifting */
+  margin-top: 0;
 }
 
 h2 {
@@ -73,6 +73,11 @@ button {
 
 button:hover {
   transform: scale(1.05);
+}
+
+button:active {
+  transition: transform 0.1s ease-in-out;
+  transform: scale(0.95);
 }
 
 #text-input {
@@ -206,7 +211,7 @@ main > section:hover {
   animation: section-hover 0.33s ease-in-out both;
 }
 
-main > h2 {
+main > h2:first-child {
   margin-top: 1rem;
 }
 
@@ -233,6 +238,7 @@ nav {
   justify-content: center;
   padding: 0.5rem;
   z-index: 1000;
+  height: 1rem;
 }
 
 nav > ul > li > a {
