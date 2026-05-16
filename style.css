@@ -66,6 +66,15 @@ optgroup {
   margin: 2.5px;
 }
 
+button {
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
 textarea {
   border: 2px solid #192d05;
   background-color: #000;
