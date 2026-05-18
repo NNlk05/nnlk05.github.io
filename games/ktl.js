@@ -231,7 +231,8 @@ function updateStatus() {
     statusDiv.id = "game-status";
     statusDiv.style.marginBottom = "16px";
     statusDiv.style.textAlign = "center";
-    statusDiv.style.fontFamily = "sans-serif";
+    statusDiv.style.fontFamily =
+      '"Inconsolata", "Courier New", Courier, monospace';
     const grid = document.querySelector(".grid");
     if (grid && grid.parentNode) {
       grid.parentNode.insertBefore(statusDiv, grid);
@@ -250,7 +251,7 @@ function updateStatus() {
   headerContainer.style.gap = "12px";
   headerContainer.style.fontSize = "1.1rem";
   headerContainer.style.fontWeight = "600";
-  headerContainer.style.color = "#374151";
+  headerContainer.style.color = "#fff";
 
   const label = document.createElement("span");
   label.textContent = "Level:";
@@ -258,11 +259,12 @@ function updateStatus() {
 
   const select = document.createElement("select");
   select.style.padding = "4px 8px";
-  select.style.borderRadius = "4px";
-  select.style.border = "1px solid #d1d5db";
+  select.style.border = "2px solid #192d05";
+  select.style.backgroundColor = "#4a3b30";
+  select.style.color = "white";
+  select.style.fontFamily = '"Courier New", Courier, monospace';
   select.style.fontSize = "0.95rem";
   select.style.fontWeight = "600";
-  select.style.color = "#374151";
   select.style.cursor = "pointer";
 
   for (let i = 0; i < levelManager.levels.length; i++) {
@@ -286,13 +288,13 @@ function updateStatus() {
   statusDiv.appendChild(headerContainer);
 
   const stats = document.createElement("div");
-  stats.style.fontSize = "0.95rem";
-  stats.style.color = "#4b5563";
+  stats.style.fontSize = "1rem";
+  stats.style.color = "white";
   stats.style.marginTop = "8px";
   stats.innerHTML = `
-    Clicks: <span style="font-weight: bold; color: #ef4444;">${levelManager.getClicks()}</span> | 
-    Generations: <span style="font-weight: bold; color: #2563eb;">${levelManager.getSteps()}</span> | 
-    Personal Best: <span style="font-weight: bold; color: #059669;">${pb !== null ? pb + " clicks" : "None yet"}</span>
+    Clicks: <span style="font-weight: bold; color: #227e00;">${levelManager.getClicks()}</span> | 
+    Generations: <span style="font-weight: bold; color: #94cdff;">${levelManager.getSteps()}</span> | 
+    Personal Best: <span style="font-weight: bold; color: #aaa37c;">${pb !== null ? pb + " clicks" : "None yet"}</span>
   `;
   statusDiv.appendChild(stats);
 }
@@ -322,45 +324,53 @@ function showSuccessModal() {
     modal.style.left = "0";
     modal.style.width = "100%";
     modal.style.height = "100%";
-    modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    modal.style.backgroundColor = "rgba(21, 33, 151, 0.8)";
     modal.style.display = "flex";
     modal.style.alignItems = "center";
     modal.style.justifyContent = "center";
     modal.style.zIndex = "9999";
 
     const content = document.createElement("div");
-    content.style.backgroundColor = "#ffffff";
+    content.style.backgroundColor = "#182498";
+    content.style.border = "4px solid #227e00";
     content.style.padding = "24px";
-    content.style.borderRadius = "8px";
     content.style.textAlign = "center";
-    content.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
-    content.style.maxWidth = "320px";
+    content.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.6)";
+    content.style.maxWidth = "360px";
     content.style.width = "90%";
 
     const title = document.createElement("h2");
     title.textContent = "Life Extinguished!";
     title.style.margin = "0 0 12px 0";
-    title.style.color = "#10b981";
-    title.style.fontFamily = "sans-serif";
+    title.style.color = "white";
+    title.style.fontFamily = '"Inconsolata", "Courier New", Courier, monospace';
 
     const message = document.createElement("p");
     message.id = "success-modal-message";
     message.style.margin = "0 0 20px 0";
-    message.style.color = "#4b5563";
-    message.style.fontFamily = "sans-serif";
+    message.style.color = "white";
+    message.style.fontFamily =
+      '"Inconsolata", "Courier New", Courier, monospace';
     message.style.lineHeight = "1.5";
 
     const nextBtn = document.createElement("button");
     nextBtn.id = "modal-next-button";
     nextBtn.textContent = "Next Level";
     nextBtn.style.padding = "8px 16px";
-    nextBtn.style.backgroundColor = "#10b981";
-    nextBtn.style.color = "#ffffff";
-    nextBtn.style.border = "none";
-    nextBtn.style.borderRadius = "4px";
+    nextBtn.style.backgroundColor = "#4a3b30";
+    nextBtn.style.color = "white";
+    nextBtn.style.border = "2px solid #192d05";
     nextBtn.style.cursor = "pointer";
-    nextBtn.style.fontWeight = "600";
-    nextBtn.style.fontFamily = "sans-serif";
+    nextBtn.style.fontFamily = '"Courier New", Courier, monospace';
+    nextBtn.style.fontSize = "1rem";
+    nextBtn.style.margin = "2.5px";
+
+    nextBtn.addEventListener("mouseover", () => {
+      nextBtn.style.transform = "scale(1.05)";
+    });
+    nextBtn.addEventListener("mouseout", () => {
+      nextBtn.style.transform = "scale(1)";
+    });
 
     nextBtn.addEventListener("click", () => {
       modal.style.display = "none";
@@ -394,45 +404,53 @@ function showGameCompletedModal() {
     modal.style.left = "0";
     modal.style.width = "100%";
     modal.style.height = "100%";
-    modal.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+    modal.style.backgroundColor = "rgba(21, 33, 151, 0.8)";
     modal.style.display = "flex";
     modal.style.alignItems = "center";
     modal.style.justifyContent = "center";
     modal.style.zIndex = "9999";
 
     const content = document.createElement("div");
-    content.style.backgroundColor = "#ffffff";
+    content.style.backgroundColor = "#182498";
+    content.style.border = "4px solid #227e00";
     content.style.padding = "32px";
-    content.style.borderRadius = "12px";
     content.style.textAlign = "center";
-    content.style.boxShadow = "0 10px 15px rgba(0, 0, 0, 0.2)";
+    content.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.6)";
     content.style.maxWidth = "360px";
     content.style.width = "90%";
 
     const title = document.createElement("h2");
     title.textContent = "🏆 Puzzle Master Completed! 🏆";
     title.style.margin = "0 0 16px 0";
-    title.style.color = "#d97706";
-    title.style.fontFamily = "sans-serif";
+    title.style.color = "#aaa37c";
+    title.style.fontFamily = '"Inconsolata", "Courier New", Courier, monospace';
 
     const message = document.createElement("p");
     message.textContent =
       "Incredible job, Master! You have solved all levels in the Key to Life puzzle set.";
     message.style.margin = "0 0 24px 0";
-    message.style.color = "#4b5563";
-    message.style.fontFamily = "sans-serif";
+    message.style.color = "white";
+    message.style.fontFamily =
+      '"Inconsolata", "Courier New", Courier, monospace';
     message.style.lineHeight = "1.5";
 
     const restartBtn = document.createElement("button");
     restartBtn.textContent = "Play Again";
     restartBtn.style.padding = "10px 20px";
-    restartBtn.style.backgroundColor = "#2563eb";
-    restartBtn.style.color = "#ffffff";
-    restartBtn.style.border = "none";
-    restartBtn.style.borderRadius = "6px";
+    restartBtn.style.backgroundColor = "#4a3b30";
+    restartBtn.style.color = "white";
+    restartBtn.style.border = "2px solid #192d05";
     restartBtn.style.cursor = "pointer";
-    restartBtn.style.fontWeight = "600";
-    restartBtn.style.fontFamily = "sans-serif";
+    restartBtn.style.fontFamily = '"Courier New", Courier, monospace';
+    restartBtn.style.fontSize = "1rem";
+    restartBtn.style.margin = "2.5px";
+
+    restartBtn.addEventListener("mouseover", () => {
+      restartBtn.style.transform = "scale(1.05)";
+    });
+    restartBtn.addEventListener("mouseout", () => {
+      restartBtn.style.transform = "scale(1)";
+    });
 
     restartBtn.addEventListener("click", () => {
       modal.style.display = "none";
@@ -568,8 +586,8 @@ function ensureGridExists() {
     gridContainer.style.width = "fit-content";
     gridContainer.style.margin = "20px auto";
     gridContainer.style.padding = "8px";
-    gridContainer.style.background = "#f1f5f9";
-    gridContainer.style.borderRadius = "8px";
+    gridContainer.style.background = "#182498";
+    gridContainer.style.border = "2px solid #227e00";
 
     const stepBtn = document.getElementById("step-button");
     if (stepBtn && stepBtn.parentNode) {
@@ -628,7 +646,8 @@ function startAutoplay() {
   const playBtn = document.getElementById("play-button");
   if (playBtn) {
     playBtn.textContent = "⏸️ Pause";
-    playBtn.style.backgroundColor = "#d97706";
+    playBtn.style.backgroundColor = "#aaa37c";
+    playBtn.style.color = "black";
   }
   levelManager.playIntervalId = setInterval(() => {
     handleStep();
@@ -647,7 +666,8 @@ function stopAutoplay() {
   const playBtn = document.getElementById("play-button");
   if (playBtn) {
     playBtn.textContent = "▶️ Play";
-    playBtn.style.backgroundColor = "#2563eb";
+    playBtn.style.backgroundColor = "#4a3b30";
+    playBtn.style.color = "white";
   }
 }
 
@@ -703,14 +723,20 @@ function game() {
     stepBtn.textContent = "⏭️ Step";
     stepBtn.title = "Step board by one generation";
     stepBtn.style.padding = "8px 16px";
-    stepBtn.style.backgroundColor = "#4b5563";
-    stepBtn.style.color = "#ffffff";
-    stepBtn.style.border = "none";
-    stepBtn.style.borderRadius = "4px";
+    stepBtn.style.backgroundColor = "#4a3b30";
+    stepBtn.style.color = "white";
+    stepBtn.style.border = "2px solid #192d05";
     stepBtn.style.cursor = "pointer";
-    stepBtn.style.fontWeight = "600";
-    stepBtn.style.fontFamily = "sans-serif";
-    stepBtn.style.marginRight = "8px";
+    stepBtn.style.fontFamily = '"Courier New", Courier, monospace';
+    stepBtn.style.fontSize = "1rem";
+    stepBtn.style.margin = "2.5px";
+
+    stepBtn.addEventListener("mouseover", () => {
+      stepBtn.style.transform = "scale(1.05)";
+    });
+    stepBtn.addEventListener("mouseout", () => {
+      stepBtn.style.transform = "scale(1)";
+    });
 
     stepBtn.addEventListener("click", () => {
       if (levelManager.isPlaying) {
@@ -726,14 +752,21 @@ function game() {
       playBtn.textContent = "▶️ Play";
       playBtn.title = "Run generations continuously";
       playBtn.style.padding = "8px 16px";
-      playBtn.style.backgroundColor = "#2563eb";
-      playBtn.style.color = "#ffffff";
-      playBtn.style.border = "none";
-      playBtn.style.borderRadius = "4px";
+      playBtn.style.backgroundColor = "#4a3b30";
+      playBtn.style.color = "white";
+      playBtn.style.border = "2px solid #192d05";
       playBtn.style.cursor = "pointer";
-      playBtn.style.fontWeight = "600";
-      playBtn.style.fontFamily = "sans-serif";
-      playBtn.style.marginRight = "8px";
+      playBtn.style.fontFamily = '"Courier New", Courier, monospace';
+      playBtn.style.fontSize = "1rem";
+      playBtn.style.margin = "2.5px";
+
+      playBtn.addEventListener("mouseover", () => {
+        playBtn.style.transform = "scale(1.05)";
+      });
+      playBtn.addEventListener("mouseout", () => {
+        playBtn.style.transform = "scale(1)";
+      });
+
       stepBtn.parentNode.insertBefore(playBtn, stepBtn.nextSibling);
       playBtn.addEventListener("click", () => {
         toggleAutoplay();
@@ -747,13 +780,21 @@ function game() {
       resetBtn.textContent = "🔄 Reset Level";
       resetBtn.title = "Reset pattern to starting state";
       resetBtn.style.padding = "8px 16px";
-      resetBtn.style.backgroundColor = "#ef4444";
-      resetBtn.style.color = "#ffffff";
-      resetBtn.style.border = "none";
-      resetBtn.style.borderRadius = "4px";
+      resetBtn.style.backgroundColor = "#4a3b30";
+      resetBtn.style.color = "white";
+      resetBtn.style.border = "2px solid #192d05";
       resetBtn.style.cursor = "pointer";
-      resetBtn.style.fontWeight = "600";
-      resetBtn.style.fontFamily = "sans-serif";
+      resetBtn.style.fontFamily = '"Courier New", Courier, monospace';
+      resetBtn.style.fontSize = "1rem";
+      resetBtn.style.margin = "2.5px";
+
+      resetBtn.addEventListener("mouseover", () => {
+        resetBtn.style.transform = "scale(1.05)";
+      });
+      resetBtn.addEventListener("mouseout", () => {
+        resetBtn.style.transform = "scale(1)";
+      });
+
       const targetSibling = playBtn ? playBtn.nextSibling : stepBtn.nextSibling;
       stepBtn.parentNode.insertBefore(resetBtn, targetSibling);
       resetBtn.addEventListener("click", () => {
