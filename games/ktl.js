@@ -530,20 +530,21 @@ function styleCheckbox(checkbox) {
   checkbox.style.width = "22px";
   checkbox.style.height = "22px";
   checkbox.style.margin = "0";
-  checkbox.style.backgroundColor = "#ffffff";
-  checkbox.style.border = "1px solid #cbd5e1";
+  checkbox.style.backgroundColor = "#000000";
+  checkbox.style.border = "1px solid #004444";
   checkbox.style.borderRadius = "4px";
   checkbox.style.cursor = "pointer";
   checkbox.style.transition = "all 0.15s ease-in-out";
 
   const updateStyle = () => {
     if (checkbox.checked) {
-      checkbox.style.backgroundColor = "#ef4444";
-      checkbox.style.borderColor = "#dc2626";
-      checkbox.style.boxShadow = "inset 0 0 4px rgba(0,0,0,0.2)";
+      checkbox.style.backgroundColor = "#00f0ff";
+      checkbox.style.borderColor = "#00ffff";
+      checkbox.style.boxShadow =
+        "0 0 8px rgba(0, 240, 255, 0.8), inset 0 0 4px rgba(255, 255, 255, 0.6)";
     } else {
-      checkbox.style.backgroundColor = "#ffffff";
-      checkbox.style.borderColor = "#cbd5e1";
+      checkbox.style.backgroundColor = "#000000";
+      checkbox.style.borderColor = "#004444";
       checkbox.style.boxShadow = "none";
     }
   };
@@ -586,8 +587,8 @@ function ensureGridExists() {
     gridContainer.style.width = "fit-content";
     gridContainer.style.margin = "20px auto";
     gridContainer.style.padding = "8px";
-    gridContainer.style.background = "#182498";
-    gridContainer.style.border = "2px solid #227e00";
+    gridContainer.style.background = "#000000";
+    gridContainer.style.border = "2px solid #00ffff";
 
     const stepBtn = document.getElementById("step-button");
     if (stepBtn && stepBtn.parentNode) {
