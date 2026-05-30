@@ -79,6 +79,20 @@
       <section class="contact-info">
         <h2>Contact and Other Sites</h2>
         <p>You can contact me through the following methods:</p>
+
+        <h3>Contact box</h3>
+        <form class="contact-form" id="contact-form" autocomplete="off">
+          <p>
+            Please provide your contact information, I can't get your contacts
+            based on this form alone.
+          </p>
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message"></textarea><br />
+          <button type="submit">Send</button>
+        </form>
+        <h3>Other Methods</h3>
         <ul>
           <li>
             Discord (preferred):
@@ -337,5 +351,6 @@ Fli3vaEMTJMPUQ==
         pubkeyBtn.textContent = isPubkeyVisible ? "Hide" : "Show";
       });
     </script>
+    <script src="contact.js"></script>
   </body>
 </html>

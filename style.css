@@ -58,7 +58,8 @@ a:active {
 
 button,
 input,
-optgroup {
+optgroup,
+textarea {
   border: 2px solid #192d05;
   background-color: #4a3b30;
   color: white;
@@ -407,4 +408,14 @@ div:empty:not(#test-area)::before {
   height: 25vh;
   border-width: 0.25vw;
   margin-bottom: 1rem;
+}
+
+.contact-box {
+  border: 2px solid #192d05;
+  background-color: #4a3b30;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  padding: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
 }
