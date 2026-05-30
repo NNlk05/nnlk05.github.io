@@ -2,12 +2,11 @@ const API_BASE_URL =
   window.location.hostname === "localhost" ||
   window.location.hostname === "127.0.0.1"
     ? "http://127.0.0.1:8000"
-    : "https://your-vercel-deployment-subdomain.vercel.app";
+    : "https://nnlk05-github-io-backend.vercel.app";
 
 function downloadStringAsFile(content, fileName, contentType = "text/plain") {
   const blob = new Blob([content], { type: contentType });
   const url = URL.createObjectURL(blob);
-
   const link = document.createElement("a");
   link.href = url;
 
