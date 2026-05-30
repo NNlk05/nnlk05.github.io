@@ -1,3 +1,9 @@
+const API_BASE_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://127.0.0.1:8000"
+    : "https://your-vercel-deployment-subdomain.vercel.app";
+
 function downloadStringAsFile(content, fileName, contentType = "text/plain") {
   const blob = new Blob([content], { type: contentType });
   const url = URL.createObjectURL(blob);
@@ -69,4 +75,68 @@ document.getElementById("load").addEventListener("click", () => {
   const filename = document.getElementById("file-name").value;
   const text = BrowserStorageFile.load(filename);
   document.getElementById("text-input").value = text;
+});
+
+document.getElementById("save-cloud").addEventListener("click", async () => {
+  const filename = document.getElementById("file-name").value.trim();
+  const text = document.getElementById("text-input").value;
+
+  if (!filename) {
+    alert("Please enter a file name before saving to the cloud.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/documents`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: filename,
+        content: text,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Server responded with status ${response.status}`);
+    }
+
+    alert("Document saved to cloud successfully!");
+  } catch (err) {
+    console.error("Cloud save error:", err);
+    alert("Failed to save document to cloud.");
+  }
+});
+
+document.getElementById("load-cloud").addEventListener("click", async () => {
+  const filename = document.getElementById("file-name").value.trim();
+
+  if (!filename) {
+    alert("Please enter a file name to load from the cloud.");
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}/documents/${encodeURIComponent(filename)}`,
+      {
+        method: "GET",
+      },
+    );
+
+    if (response.status === 404) {
+      alert("Document not found in cloud storage.");
+      return;
+    } else if (!response.ok) {
+      throw new Error(`Server responded with status ${response.status}`);
+    }
+
+    const data = await response.json();
+    document.getElementById("text-input").value = data.content;
+    alert("Document loaded from cloud successfully!");
+  } catch (err) {
+    console.error("Cloud load error:", err);
+    alert("Failed to load document from cloud.");
+  }
 });
