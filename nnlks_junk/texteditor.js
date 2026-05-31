@@ -79,6 +79,12 @@ document.getElementById("load").addEventListener("click", () => {
 document.getElementById("save-cloud").addEventListener("click", async () => {
   const filename = document.getElementById("file-name").value.trim();
   const text = document.getElementById("text-input").value;
+  const token = localStorage.getItem("access_token");
+
+  if (!token) {
+    alert("Please log in to save files to your cloud storage.");
+    return;
+  }
 
   if (!filename) {
     alert("Please enter a file name before saving to the cloud.");
@@ -90,6 +96,7 @@ document.getElementById("save-cloud").addEventListener("click", async () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         id: filename,
@@ -110,6 +117,12 @@ document.getElementById("save-cloud").addEventListener("click", async () => {
 
 document.getElementById("load-cloud").addEventListener("click", async () => {
   const filename = document.getElementById("file-name").value.trim();
+  const token = localStorage.getItem("access_token");
+
+  if (!token) {
+    alert("Please log in to load files from your cloud storage.");
+    return;
+  }
 
   if (!filename) {
     alert("Please enter a file name to load from the cloud.");
@@ -121,6 +134,9 @@ document.getElementById("load-cloud").addEventListener("click", async () => {
       `${API_BASE_URL}/documents/${encodeURIComponent(filename)}`,
       {
         method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
     );
 

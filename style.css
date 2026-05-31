@@ -240,6 +240,11 @@ nav {
   padding: 0.5rem;
   z-index: 1000;
   height: 1rem;
+  display: flex;
+}
+
+nav > ul > li.login {
+  margin-left: auto;
 }
 
 nav > ul > li > a {

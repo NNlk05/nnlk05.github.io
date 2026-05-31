@@ -3,32 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>nnlk05.github.io</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/normalize.css" />
     <script
       src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
       defer
     ></script>
-<link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Emoji:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-  rel="stylesheet"
-/>
-    <meta
-      name="google-site-verification"
-      content="--dhKNDxlhaOMOR1buWLQnWNTOosb9BAUEZi_HXgSt4"
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Noto+Emoji:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
     />
-    <meta name="description" content="NNlk05's site.">
-    <meta name="keywords" content="NNlk05 official site website minecraft seedfinding">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    </head>
-    <link rel="preconnect" href="https://pastebin.com">
-<header>
+  </head>
+  <body>
+    <header>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -46,16 +40,16 @@
         </ul>
       </nav>
       <img
-        src="pack.png"
+        src="/pack.png"
         alt="NNlk05's pfp, [pack.png](packpng.com)"
-        draggable="false" 
-        width="1920" 
+        draggable="false"
+        width="1920"
         height="1080"
       />
       <div class="header-content">
-  <h1>nnlk05.github.io</h1>
-  <h2>NNlk05's site</h2>
-</div>
+        <h1>Login</h1>
+        <h2>NNlk05's site</h2>
+      </div>
       <button
         onclick="
           document
@@ -76,22 +70,17 @@
           visibility: hidden;
         "
       ></span>
-      <section class="quote-section">
-        <h3>Quotes from NNlk05</h3>
-        <blockquote class="quote">
-          <p>
-            Wait, you aren't supposed to see this! <br />
-            While you're here, come and see the world in the header! <br />
-            here's how:
-            <script src="https://pastebin.com/embed_js/CmsEKDev" defer></script>
-          </p>
-        </blockquote>
-        <button class="new-quote-btn" onclick="newQuote()">
-          Get a new quote!
-        </button>
-      </section>
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <br />
+        <button type="submit">Login</button>
+      </form>
     </main>
-    <script src="quote.js"></script>
-      <script defer src="/userctrl.js"></script>
+    <script src="/login.js"></script>
+    <script defer src="/userctrl.js"></script>
   </body>
 </html>
