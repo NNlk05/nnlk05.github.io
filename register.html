@@ -60,7 +60,7 @@
         V
       </button>
     </header>
-    <main>
+<main>
       <span
         class="scroll-to-here"
         style="
@@ -70,38 +70,19 @@
           visibility: hidden;
         "
       ></span>
-      <main>
-        <span
-          class="scroll-to-here"
-          style="
-            display: block;
-            position: relative;
-            top: -100px;
-            visibility: hidden;
-          "
-        ></span>
-
-        <form class="register-form">
-          <div class="form-group">
-            <label for="user_id">User ID</label>
-            <input type="number" id="user_id" required min="1" />
-          </div>
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" required autocomplete="username" />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              required
-              autocomplete="new-password"
-            />
-          </div>
-          <button type="submit">Register</button>
-        </form>
-      </main>
+      
+      <form class="register-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required autocomplete="new-password" />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </main>
     </main>
     <script src="/register.js"></script>
     <script defer src="/userctrl.js"></script>

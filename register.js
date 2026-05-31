@@ -6,7 +6,7 @@ const API_BASE_URL =
 
 const endpoint = `${API_BASE_URL}/auth/signup`;
 
-async function register(userId, username, password) {
+async function register(username, password) {
   try {
     const response = await fetch(endpoint, {
       method: "POST",
@@ -14,7 +14,6 @@ async function register(userId, username, password) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user_id: parseInt(userId, 10),
         username,
         password,
       }),
@@ -41,11 +40,10 @@ document
     e.preventDefault();
 
     try {
-      const userId = document.querySelector("#user_id").value;
       const username = document.querySelector("#username").value;
       const password = document.querySelector("#password").value;
 
-      await register(userId, username, password);
+      await register(username, password);
     } catch (err) {
       console.error("Error in submit listener:", err);
     }
