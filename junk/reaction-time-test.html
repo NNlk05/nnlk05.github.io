@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Text editor</title>
-
+    <title>Reaction Time Test</title>
+    <link rel="stylesheet" href="/normalize.css" />
     <script
       src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"
       defer
@@ -20,23 +20,24 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <script defer src="reaction-time-test.js"></script>
   </head>
   <body>
     <header>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/about.html">About</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/projects">Projects</a></li>
           <li>
-            <a href="/nnlks_junk/index.html">My Junk</a>
+            <a href="/junk">My Junk</a>
           </li>
           <li>
-            <a href="/games/index.html">My Games</a>
+            <a href="/games">My Games</a>
           </li>
           <li><a href="/blog">Blog</a></li>
-          <li class="login"><a href="/login.html">Login</a></li>
+          <li class="login"><a href="/login">Login</a></li>
         </ul>
       </nav>
       <img
@@ -47,7 +48,7 @@
         height="1080"
       />
       <div class="header-content">
-        <h1>Text editor</h1>
+        <h1>Reaction Time Test</h1>
         <h2>NNlk05's site</h2>
       </div>
       <button
@@ -70,24 +71,14 @@
           visibility: hidden;
         "
       ></span>
-      <input type="file" id="file" style="display: none" />
-      <h2>Text editor</h2>
-      <div class="toolbar icons" style="margin-bottom: 0.5rem">
-        <button id="upload" title="Upload file">📤</button>
-        <button id="save" title="Save to Browser storage">🗁</button>
-        <button id="load" title="Load from Browser storage">⟳</button>
-        <button id="download" title="Download file">📥</button>
-        <button id="save-cloud" title="Save to Cloud">☁️💾</button>
-        <button id="load-cloud" title="Load from Cloud">☁️📂</button>
-        <input
-          type="text"
-          name="file-name"
-          id="file-name"
-          placeholder="File name"
-        />
-      </div>
-      <textarea rows="80" cols="106" id="text-input"></textarea>
-      <script src="texteditor.js"></script>
+      <h2>NNlk05's Reaction Time Test</h2>
+      <p>
+        Click start to start. The area below will turn green after a random
+        delay. When it turns green, click as fast as you can.
+      </p>
+      <button id="start-button">Start</button>
+      <div id="results">Results will appear here.</div>
+      <div id="test-area"></div>
     </main>
     <script defer src="/userctrl.js"></script>
   </body>
