@@ -14,8 +14,8 @@
 
   --accent-primary: light-dark(hsl(235, 65%, 40%), hsl(235, 65%, 40%));
   --accent-primary-hover: light-dark(hsl(235, 65%, 60%), hsl(235, 65%, 60%));
-  --accent-primary-active: light-dark(hsl(225, 65%, 40%), hsl(225, 65%, 40%));
-  --accent-subtle: light-dark(hsl(0, 0%, 94%), hsl(0, 0%, 14%));
+  --accent-primary-active: light-dark(hsl(225, 65%, 40%), hsl(225, 50%, 25%));
+  --accent-subtle: light-dark(hsl(225, 50%, 25%), hsl(0, 0%, 14%));
   --accent-text: light-dark(hsl(0, 0%, 15%), hsl(0, 0%, 90%));
 
   --accent-secondary: light-dark(hsl(0, 0%, 38%), hsl(0, 0%, 72%));
