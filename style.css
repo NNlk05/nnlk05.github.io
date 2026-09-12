@@ -80,8 +80,8 @@
 body {
   font-family: "Open Sans", Verdana, Helvetica, Arial, sans-serif;
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+    background-color 0.5s cubic-bezier(1, 0, 0, 1),
+    color 0.5s cubic-bezier(1, 0, 0, 1);
   background-color: var(--bg-color-primary);
   color: var(--text-color-primary);
   min-height: 100vh;
