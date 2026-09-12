@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAGENAME | nnlk05.github.io</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/favicons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg" />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-brand">
+        <a href="/" class="nav-brand">
+          <img src="/logo.png" style="display: inline" draggable="false" />
+          <span class="site-name-text">nnlk05.github.io</span></a
+        >
+      </div>
+      <ul class="main-nav-links">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i data-lucide="sun-moon"></i>
+        </button>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <header class="hero">
+        <h1>Welcome to NNlk05's site!</h1>
+        <p>
+          Nice to meet you! I'm NNlk05. Scroll down a bit to learn more about
+          me!
+        </p>
+      </header>
+    </main>
+
+    <script>
+      lucide.createIcons();
+
+      const themeToggleBtn = document.getElementById("theme-toggle");
+
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
+
+      themeToggleBtn.addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        let nextTheme = "dark";
+
+        if (currentTheme === "dark") {
+          nextTheme = "light";
+        } else if (currentTheme === "light") {
+          nextTheme = "dark";
+        } else {
+          const isSystemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          nextTheme = isSystemDark ? "light" : "dark";
+        }
+
+        document.documentElement.setAttribute("data-theme", nextTheme);
+        localStorage.setItem("theme", nextTheme);
+      });
+    </script>
+  </body>
+</html>
