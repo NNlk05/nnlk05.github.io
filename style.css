@@ -12,9 +12,9 @@
   --text-color-muted: light-dark(hsl(0, 0%, 70%), hsl(0, 0%, 35%));
   --text-color-inverse: light-dark(hsl(0, 0%, 100%), hsl(0, 0%, 8%));
 
-  --accent-primary: light-dark(hsl(0, 0%, 12%), hsl(0, 0%, 92%));
-  --accent-primary-hover: light-dark(hsl(0, 0%, 25%), hsl(0, 0%, 80%));
-  --accent-primary-active: light-dark(hsl(0, 0%, 0%), hsl(0, 0%, 100%));
+  --accent-primary: light-dark(hsl(235, 65%, 40%), hsl(235, 65%, 40%));
+  --accent-primary-hover: light-dark(hsl(235, 65%, 60%), hsl(235, 65%, 60%));
+  --accent-primary-active: light-dark(hsl(225, 65%, 40%), hsl(225, 65%, 40%));
   --accent-subtle: light-dark(hsl(0, 0%, 94%), hsl(0, 0%, 14%));
   --accent-text: light-dark(hsl(0, 0%, 15%), hsl(0, 0%, 90%));
 
