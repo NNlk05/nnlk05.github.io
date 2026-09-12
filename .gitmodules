@@ -1,3 +1,7 @@
 [submodule "backend"]
     path = backend
     url = https://github.com/NNlk05/nnlk05.github.io-backend.git
+
+[submodule "blog"]
+    path = blog
+    url = "https://github.com/NNlk05/blog.git"
