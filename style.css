@@ -87,6 +87,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
 }
 
 .main-nav {
@@ -165,7 +166,7 @@ body {
 #theme-toggle:hover {
   background: var(--bg-color-tertiary);
   border-color: var(--border-color-strong);
-  transform: translateY(-1px);
+  transform: translateY(-0.5px);
 }
 
 .site-name-text {
@@ -236,7 +237,7 @@ body {
 }
 
 .swatch-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-0.5px);
   box-shadow: var(--shadow-md);
 }
 
@@ -454,4 +455,5 @@ footer {
   text-align: center;
   color: var(--text-color-tertiary);
   font-size: 0.9rem;
+  height: 100vh;
 }

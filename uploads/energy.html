@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>uploads/energy.html | nnlk05.github.io</title>
+
+		<link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+		<link rel="shortcut icon" href="/favicons/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+		<link rel="manifest" href="/favicons/site.webmanifest">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+		<script src="https://unpkg.com/lucide@latest"></script>
+
+		<link rel="stylesheet" href="/reset.css">
+		<link rel="stylesheet" href="/style.css">
+
+		<meta name="robots" content="noindex, nofollow">
+	</head>
+
+	<body>
+		<nav class="main-nav">
+			<div class="nav-brand">
+				<a href="/" class="nav-brand">
+					<img src="/logo.png" alt="nnlk05.github.io logo" style="display: inline" draggable="false">
+					<span class="site-name-text">nnlk05.github.io</span>
+				</a>
+			</div>
+
+			<ul class="main-nav-links">
+				<li>
+					<button id="theme-toggle" type="button" aria-label="Toggle theme">
+						<i data-lucide="sun-moon"></i>
+					</button>
+				</li>
+			</ul>
+		</nav>
+
+		<main class="container">
+			<div class="form-group">
+				<label class="form-label" for="size-input">Input size:</label>
+				<input
+					class="form-control"
+					type="number"
+					id="size-input"
+					name="size-input"
+					min="0"
+					step="1"
+					autocomplete="off"
+				>
+			</div>
+
+			<div id="output" aria-live="polite"></div>
+		</main>
+
+		<script>
+			lucide.createIcons();
+
+			const themeToggleBtn = document.getElementById("theme-toggle");
+			const savedTheme = localStorage.getItem("theme");
+
+			if (savedTheme) {
+				document.documentElement.setAttribute("data-theme", savedTheme);
+			}
+
+			themeToggleBtn.addEventListener("click", () => {
+				const currentTheme =
+					document.documentElement.getAttribute("data-theme");
+
+				let nextTheme = "dark";
+
+				if (currentTheme === "dark") {
+					nextTheme = "light";
+				} else if (currentTheme === "light") {
+					nextTheme = "dark";
+				} else {
+					const isSystemDark = window.matchMedia(
+						"(prefers-color-scheme: dark)",
+					).matches;
+
+					nextTheme = isSystemDark ? "light" : "dark";
+				}
+
+				document.documentElement.setAttribute("data-theme", nextTheme);
+				localStorage.setItem("theme", nextTheme);
+			});
+		</script>
+
+		<script>
+			const sizeInput = document.getElementById("size-input");
+			const output = document.getElementById("output");
+
+			const calcEng = () => {
+				const value = Number(sizeInput.value);
+
+				output.className = "";
+
+				if (
+					sizeInput.value.trim() === "" ||
+					!Number.isInteger(value) ||
+					value < 0
+				) {
+					output.className = "alert alert-danger";
+					output.textContent = "Please enter a non-negative integer.";
+					return;
+				}
+
+				const energy = Math.floor(Math.sqrt(value));
+
+				output.className = "alert alert-success";
+				output.textContent = `Energy: ${energy}`;
+			};
+
+			sizeInput.addEventListener("input", calcEng);
+			sizeInput.addEventListener("change", calcEng);
+		</script>
+	</body>
+</html>
